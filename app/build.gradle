@@ -18,6 +18,12 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            shrinkResources true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -53,9 +59,6 @@ dependencies {
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
-
-    //Json Path
-    implementation 'com.jayway.jsonpath:json-path:2.4.0'
 
     //ButterKnife
     implementation 'com.jakewharton:butterknife:10.2.1'
