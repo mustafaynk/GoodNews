@@ -4,7 +4,7 @@
 </p>
 GoodNews is an Android news application. 
 
-
+### Note: You need to create a News API key and add it to the strings.xml file
 
 ### Features
 ---
