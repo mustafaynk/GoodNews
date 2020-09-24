@@ -2,10 +2,11 @@
 <p align="center">
   <img  src="https://github.com/mustafaynk/GoodNews/blob/master/screenshots/goodnewsicon.PNG?raw=true">
 </p>
+
 GoodNews is an Android news application. 
 
 <a href="https://play.google.com/store/apps/details?id=com.ynk.goodnews" target="_blank">
-	<img width="280" height="150" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuYjwrkyCZGRYvNRwGIz44WsB8Tzevabc22W4Oc6f-UUCjqd6_&usqp=CAU">
+	<img width="280" height="140" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuYjwrkyCZGRYvNRwGIz44WsB8Tzevabc22W4Oc6f-UUCjqd6_&usqp=CAU">
 </a>	
 
 ### Note: You need to create a [News API](https://newsapi.org/) key and add it to the strings.xml file
