@@ -72,7 +72,6 @@ Search Page             |  Search Preview
 </p>
 
 
-[Application APK](https://github.com/mustafaynk/GoodNews/blob/master/apk/goodnews.apk?raw=true)
 ---
 ### End
 
