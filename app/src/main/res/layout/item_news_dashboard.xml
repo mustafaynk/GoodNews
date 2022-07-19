@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/tools">
+<layout xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data class="NewsBinding">
 
@@ -18,7 +19,6 @@
         android:id="@+id/lyt_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
         android:onClick="@{()-> clickListener.onNewsItemClick(news)}"
@@ -68,7 +68,8 @@
                     android:text="@{news.newsTitle}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_80"
-                    app:fontFamily="sans-serif-medium" />
+                    app:fontFamily="sans-serif-medium"
+                    tools:text="Test" />
 
                 <View
                     android:layout_width="0dp"
@@ -99,9 +100,9 @@
                         android:id="@+id/newsPublishDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{news.newsPublishedDate}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/grey_40" />
+                        android:textColor="@color/grey_40"
+                        app:textToDate="@{news.newsPublishedDate}" />
 
                 </LinearLayout>
 
