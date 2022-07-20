@@ -23,7 +23,12 @@ class MainRepositoryImpl : MainRepository {
     }
 
     override suspend fun getTotalNews(country: String, apiKey: String): TotalNews? {
-        return service.getTotalNews(country, apiKey)
+        val response = service.getTotalNews(country, apiKey)
+        return if(response.isSuccessful) {
+            response.body()
+        } else {
+            null
+        }
     }
 
     override suspend fun getTotalNews(
@@ -31,14 +36,24 @@ class MainRepositoryImpl : MainRepository {
         category: String,
         apiKey: String
     ): TotalNews? {
-        return service.getTotalNews(country, category, apiKey)
+        val response = service.getTotalNews(country, category, apiKey)
+        return if(response.isSuccessful) {
+            response.body()
+        } else {
+            null
+        }
     }
 
     override suspend fun getSearchedTotalNews(
         keyword: String,
         apiKey: String
     ): TotalNews? {
-        return service.getSearchedTotalNews(keyword, apiKey)
+        val response = service.getSearchedTotalNews(keyword, apiKey)
+        return if(response.isSuccessful) {
+            response.body()
+        } else {
+            null
+        }
     }
 
 

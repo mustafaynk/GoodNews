@@ -6,13 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.ynk.goodnews.model.News
 import com.ynk.goodnews.model.TotalNews
 import com.ynk.goodnews.repositories.MainRepositoryImpl
-import com.ynk.goodnews.restapi.ApiClient
-import com.ynk.goodnews.restapi.NewsApi
 import com.ynk.goodnews.utils.Util
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainViewModel : ViewModel() {
 
@@ -27,9 +23,16 @@ class MainViewModel : ViewModel() {
         newsList.clear()
         newsLiveData.value = null
         viewModelScope.launch {
-            repository.getTotalNews(langCode, category, apiKey)?.let {
-               fillNewsList(it)
+            if (category.isNotEmpty()) {
+                repository.getTotalNews(langCode, category, apiKey)?.let {
+                    fillNewsList(it)
+                }
+            } else {
+                repository.getTotalNews(langCode, apiKey)?.let {
+                    fillNewsList(it)
+                }
             }
+
         }
     }
 
@@ -46,7 +49,7 @@ class MainViewModel : ViewModel() {
     private fun fillNewsList(totalNews: TotalNews?) {
         totalNews?.let {
             newsList.addAll(it.newsList)
-            newsLiveData.value = newsList
+            newsLiveData.postValue(newsList)
         }
     }
 

@@ -8,14 +8,15 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.jackson.JacksonConverterFactory
-import java.lang.Exception
-import java.lang.RuntimeException
+import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
 import javax.inject.Singleton
-import javax.net.ssl.*
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -24,7 +25,7 @@ class Module {
     @Provides
     @Singleton
     fun providesNewsApi(): NewsApi = Retrofit.Builder()
-        .addConverterFactory(JacksonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(Util.API_BASE_URL)
         .client(getUnsafeOkHttpClient().build())
         .build()
