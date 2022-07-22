@@ -24,8 +24,8 @@ GoodNews is an Android news application.
 - IDE: Android Studio
 - API: News API
 - Arthitecture: MVVM
-- Programming Language: Java
-- Third Party Libraries: Retrofit, Glide, ButterKnife, Gson
+- Programming Language: Kotlin
+- Third Party Libraries: Retrofit, Glide, Gson
 
 ### Application Previews
 ---
