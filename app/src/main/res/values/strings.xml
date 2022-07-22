@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Good News</string>
-    <string name="news_api_key" translatable="false">YOUR_NEWS_API_KEY</string>
+    <string name="news_api_key" translatable="false">950841822c04492085df4efbce16fdf4</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="category_business">Business</string>
